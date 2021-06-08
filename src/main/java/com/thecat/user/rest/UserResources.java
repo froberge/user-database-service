@@ -29,6 +29,9 @@ public class UserResources {
     @Path( "/login")
     @Consumes( MediaType.APPLICATION_JSON)
     public int login( User user ) {
+
+        System.err.println( "in the service " + user.toString() + " " + user.password );
+
         // First look at if the username exist.
         User u = userService.findByEmail(user.email);
 
