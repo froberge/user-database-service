@@ -12,7 +12,7 @@ public class UserService {
         return User.find( "name", name ).firstResult();
     }
 
-    public User findByEmailAdr( String email ) {
+    public User findByEmail( String email ) {
         return User.find( "email", email ).firstResult();
     }
 
