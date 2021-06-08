@@ -12,11 +12,15 @@ import javax.ws.rs.core.Response.Status;
 import com.thecat.user.model.User;
 import com.thecat.user.service.UserService;
 
+import org.jboss.logging.Logger;
+
 @Path("/user")
-public class UserResources {
+public class UserResource {
     
     @Inject
     UserService userService;
+
+    private static final Logger LOG = Logger.getLogger(UserResource.class);
 
     @GET
     @Path( "health" )
@@ -30,7 +34,7 @@ public class UserResources {
     @Consumes( MediaType.APPLICATION_JSON)
     public int login( User user ) {
 
-        System.err.println( "in the service " + user.toString() + " " + user.password );
+        LOG.info( "Login rest endpoint " + user.toString() + " " + user.password );
 
         // First look at if the username exist.
         User u = userService.findByEmail(user.email);
