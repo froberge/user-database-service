@@ -1,4 +1,4 @@
-package com.thecat.user.rest;
+package com.thecat.user.endpoint;
 
 import io.quarkus.test.junit.NativeImageTest;
 

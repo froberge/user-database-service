@@ -1,4 +1,4 @@
-package com.thecat.user.rest;
+package com.thecat.user.endpoint;
 
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -7,6 +7,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 import com.thecat.user.model.User;
@@ -25,8 +26,8 @@ public class UserResource {
     @GET
     @Path( "health" )
     @Produces(MediaType.TEXT_PLAIN)
-    public String health() {
-        return "SUCCESS";
+    public int health() {
+        return Response.Status.OK.getStatusCode();
     }
 
     @POST
@@ -52,19 +53,4 @@ public class UserResource {
             return Status.NO_CONTENT.getStatusCode();
 
     }
-
-    public class UserResult {
-        public boolean success;
-        public String message;
-        public User user;
-
-        public UserResult() {}
-
-        public UserResult(boolean success, String message, User user) {
-            this.success = success;
-            this.message = message;
-            this.user = user;
-        }
-    }
-
 }
