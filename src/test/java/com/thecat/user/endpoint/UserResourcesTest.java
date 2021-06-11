@@ -7,8 +7,6 @@ import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
 
-import com.thecat.user.model.User;
-
 @QuarkusTest
 public class UserResourcesTest {
 
