@@ -31,7 +31,6 @@ public class UserResource {
     }
 
     @POST
-    @Path( "/login")
     @Consumes( MediaType.APPLICATION_JSON)
     public int login( User user ) {
 
@@ -51,6 +50,5 @@ public class UserResource {
             }
         } else
             return Status.NO_CONTENT.getStatusCode();
-
     }
 }
